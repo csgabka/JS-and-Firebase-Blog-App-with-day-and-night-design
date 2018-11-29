@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link href="https://fonts.googleapis.com/css?family=Ranga" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="./css/index.css"/>
+	<link rel="stylesheet" type="text/css" href="./css/sun.css"/>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<script src="https://www.gstatic.com/firebasejs/5.5.9/firebase.js"></script>
+	<script type="text/javascript" src="./js/firebase.js"></script>
+	<script type="text/javascript" src="./js/index.js"></script>
+	<script type="text/javascript" src="./js/sun.js"></script>
+</head>
+<body>
+	<!--HEADER -->
+	<div class="header">
+		<div id="orb" class="night">
+		<div class="sun" onclick="lightUp()"></div>
+		<div class="moon" onclick="lightUp()"></div>
+		</div>
+		<button onclick="openOrCloseAdmin()" class="open-admin btn btn-outline-info" id="admin">Admin</button>
+		<div class="title">
+			<h1>Write it out</h1>
+			<img src="img/js.jpg" alt="vanillaJS"/>
+			<span>+</span>
+			<img src="img/firebase.jpg" alt="firebase"/>
+		</div>
+	</div>
+
+	<!--WELCOME -->
+	<div class="content" id="content">
+		<div id="blog-post">
+			<h2 id="post-title">Welcome!</h2>
+			<p id="post-content"> This is a basic blog app, built in Vanilla JS and Firebase. Please feel free to write out your thoughts and test it. </p>		
+		</div>
+	</div>
+
+	<!--ADMIN FORM -->
+	<div id="admin-form" class="admin-form">
+		<button id="editing-mode-button" onclick="enterEditingMode()" class="btn btn-outline-info">Editing mode</button>
+		<div id="admin-help">
+			<div class="admin-help-editing-hidden">
+				<!--coming soon -->
+			</div>
+			<form id="form">
+				<h2 id="admin-help-title">Title</h2>
+				<div id="blog-id-storage" hidden="true"></div>
+				<input id="blog-title" onkeyup="enableAddButton()"></input><br />
+				<h4 class="blog-content">Content</h4><br />
+				<textarea rows="8" id="blog-content" onkeyup="enableAddButton()"></textarea><br />
+				<button disabled class="button btn-outline-info" id="add" onclick="writeUserData(document.getElementById('blog-title').value,
+				document.getElementById('blog-content').value, uniqueId(), date())">Add</button>
+				<button class="btn btn-outline-info" id="edit" hidden="true" onclick="saveChanges(event)">Save changes</button>
+			</form>
+			</div>
+		</div>
+</body>
+</html>

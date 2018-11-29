@@ -1,0 +1,195 @@
+body, html {
+	padding: 0;
+	margin: 0;
+	background-color:#22204F;
+	top: 0;
+	transition: 4s all;
+}
+
+img {
+	height: 50px;
+	border-radius: 18px;
+}
+
+ h1, h2, h3, p {
+ 	color: #22204F;
+ }
+
+ h1 {
+ 	padding: 0px;
+ }
+
+
+button:hover:enabled {
+	cursor: pointer;
+}
+
+button:hover:disabled {
+	cursor: not-allowed;
+}
+
+ .posted {
+ 	font-size: 1vw;
+ }
+
+/*HEADER STYLE*/
+.header {
+	height: 150px;
+	position: absolute;
+	display: block;
+	clear: both;
+	padding: 15px;
+	text-align: center;
+	margin: 0 auto;
+	width: 100%;
+	opacity: 1;
+	color: #FFF;
+	font-family: 'Ranga', cursive;
+	text-shadow: 1px 0 #D4AF37, 0 1px #8B7500, 2px 0 #FFEC8B, 0 1px black;
+	background-color: #22204F;
+	transition: 4s all;
+}
+
+/*CONTENT STYLE*/
+
+.content { 
+	top: 150px;
+	position: absolute;
+	display: block;
+	width: 100%;
+	padding-left: 5vw;
+	padding-right: 5vw;
+	font-family: 'Open Sans Condensed', sans-serif;
+	color: #FFF;
+	background-color: #22204F;
+	transition: 4s all;
+ }
+
+.blog-content {
+	font-size: 2vw;
+	position: fixed;
+}
+
+
+#blog-title {
+	width: 100%;
+	background-color: #FFFFFF;
+}
+
+#blog-content {
+	width: 100%;
+	background-color: #FFFFFF;
+}
+
+#post-title {
+	color: #000000;
+	font-size: 2.5vw;
+	text-shadow: 1px 1px #FFFFFF, 1px 1px #FFFFFF;
+}
+
+#post-content {
+	color: #000000;
+	font-size: 1.5vw;
+	height: 110px;
+	text-shadow: 1px 1px #FFFFFF;
+}
+
+.blog-post {
+	margin: 2px;
+	background: rgba(0, 0, 0, 0.1);
+	transition: 1s all;
+	padding: 2vw;
+	border-radius: 15px;
+	transition: 1s all;
+	
+}
+
+p.post-content {
+	color: #FFFFFF;
+}
+
+.blog-post.show {
+  transition: 1s all;
+  background: rgba(255, 255, 255, 0.1);
+
+}
+
+.blog-post.show.hide {
+	opacity: 0;
+	transition: 1s all;
+}
+
+.wave {
+  width: 60%;
+  height: 40px;
+  position: center;
+}
+
+.wave:after {
+    content: '';
+    width: 30%;
+    position: absolute;
+    height: 30px;
+    display: block;
+    border-bottom: 3px solid #000000;
+    border-radius: 50%;
+    left: 50%;
+}
+
+.wave:before {
+    content: '';
+    width: 30%;
+    position: absolute;
+    height: 30px;
+    display: block;
+    border-top: 3px solid #FFFFFF;
+    border-radius: 50%;
+}
+
+/*ADMIN STYLE*/
+
+#admin {
+	position: fixed;
+	top: 5px;
+	right: 5px;
+	z-index: 1;
+}
+
+.admin-form {
+	font-family: 'Ranga', cursive;
+	border-radius: 15px;
+	color: #FFF;
+	position: fixed;
+	top: 50px;
+	right: 10px;
+	width: 40%;
+	padding: 10px;
+	background-color: #0A2342;
+	opacity: 0.9;
+	transition: 900ms all;
+}
+
+.admin-form-hidden {
+	transform: scale(0);
+	transform-origin: top right;
+	opacity: 0;
+	transition: 900ms all;
+}
+
+
+
+/*#admin-help-title {
+	font-size: 2vw;
+}
+
+.admin-help-editing-hidden {
+	opacity: 0;
+	transition: 1s;
+}
+
+.admin-help-editing {
+	opacity: 1;
+	transition: 1s;
+}*/
+
+
