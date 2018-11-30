@@ -127,8 +127,8 @@ function enterEditingMode() {
 			parent.appendChild(addDeleteButton);
 			addDeleteButton.id = addDeleteButton.parentNode.id + "-delete";
 			addEditButton.id = addEditButton.parentNode.id + "-edit";
-			addDeleteButton.addEventListener("click", onDeleteButton.bind(this)); 
-			addEditButton.addEventListener("click", onEditButton.bind(this));
+			addDeleteButton.addEventListener("click", this.onDeleteButton.bind(this), false); 
+			addEditButton.addEventListener("click", this.onEditButton.bind(this), false);
 			})
 	}
 }
@@ -155,8 +155,16 @@ function onDeleteButton(event) {
 	event.preventDefault();
 	let id = event.target.parentElement.getAttribute('id');
 	let deletePost = document.getElementById(id);
-	firebase.database().ref('posts/' + id).remove();
+	firebase.database().ref('posts/' + id).remove().then(function() {
+    	console.log("Remove succeeded.")
+  	})
+  	.catch(function(error) {
+   	 console.log("Remove failed: " + error.message)
+  	});
 	deletePost.className = deletePost.className + " hide";
+	document.getElementById('blog-title').value = "";
+	document.getElementById('blog-content').value = "";
+	document.getElementById('edit').setAttribute('disabled', true);
 	setTimeout(function () { deletePost.parentNode.removeChild(deletePost); }, 1500);
 }
 
@@ -172,7 +180,7 @@ function onEditButton(event) {
 	let storeContent = document.getElementById('blog-content');
 	localStorage.setItem("postID", id);
     document.getElementById("blog-id-storage").innerHTML = localStorage.getItem("postID");
-	posts.on('value', function(snapshot) {
+	posts.once('value', function(snapshot) {
 	let editPost = snapshot.val();
 	storeTitle.value = editPost.title;
 	storeContent.value = editPost.content;
