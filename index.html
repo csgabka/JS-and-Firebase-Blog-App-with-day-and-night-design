@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<!--META-->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 	<link href="https://fonts.googleapis.com/css?family=Ranga" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="./css/index.css"/>
@@ -11,6 +14,8 @@
 	<script type="text/javascript" src="./js/firebase.js"></script>
 	<script type="text/javascript" src="./js/index.js"></script>
 	<script type="text/javascript" src="./js/sun.js"></script>
+	
+
 </head>
 <body>
 	<!--HEADER -->
@@ -32,7 +37,7 @@
 	<div class="content" id="content">
 		<div id="blog-post">
 			<h2 id="post-title">Welcome!</h2>
-			<p id="post-content"> This is a basic blog app, built in Vanilla JS and Firebase. Please feel free to write out your thoughts and test it. </p>		
+			<p id="post-content">BLOG app was built in Vanilla JS and Firebase. Please feel free to write out your thoughts and test it. Full access to adding, editing and deleting posts in the Admin section. When entering to editing mode, select the post you would like to edit or delete on the left. In order to add new post, exit editing mode. Click on the orb on the left hand side corner to set the your preferred design.</p>
 		</div>
 	</div>
 
@@ -40,9 +45,6 @@
 	<div id="admin-form" class="admin-form">
 		<button id="editing-mode-button" onclick="enterEditingMode()" class="btn btn-outline-info">Editing mode</button>
 		<div id="admin-help">
-			<div class="admin-help-editing-hidden">
-				<!--coming soon -->
-			</div>
 			<form id="form">
 				<h2 id="admin-help-title">Title</h2>
 				<div id="blog-id-storage" hidden="true"></div>
